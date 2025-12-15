@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Langton's Ant - Cellular Automaton</title>
+    <link rel="stylesheet" href="langtons_ant.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="titleHeader" title="Click to play/stop Für Elise background music">Langton's Ant</h1>
+            <p>A simple cellular automaton that creates complex emergent patterns</p>
+        </header>
+
+        <div class="main-content">
+            <div class="left-panel">
+                <div class="controls">
+                    <button id="startBtn">Start</button>
+                    <button id="pauseBtn">Pause</button>
+                    <button id="resetBtn">Reset</button>
+                    <button id="stepBtn">Step</button>
+                    <button id="continueBtn" style="display: none;">Continue After Highway</button>
+                </div>
+                
+                <div class="settings">
+                    <div class="speed-control">
+                        <label for="speedRange">Speed: </label>
+                        <input type="range" id="speedRange" min="1" max="200" value="50">
+                        <span id="speedValue">50</span>
+                    </div>
+                    
+                    <div class="sound-toggle">
+                        <label for="soundToggle">Sound: </label>
+                        <input type="checkbox" id="soundToggle" checked>
+                    </div>
+                </div>
+
+                <div class="sound-modes">
+                    <h3>Sound Mode:</h3>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="soundMode" value="default" checked>
+                            <span class="radio-label">Default Tones</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="soundMode" value="interesting">
+                            <span class="radio-label">Interesting Sounds</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="soundMode" value="musical">
+                            <span class="radio-label">Musical Scale</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="soundMode" value="random">
+                            <span class="radio-label">Random Notes</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="soundMode" value="cornfield">
+                            <span class="radio-label">Cornfield Chase</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="rules">
+                    <h3>Movement Rules:</h3>
+                    <div class="rule-selector">
+                        <label for="ruleSelect">Rule Set: </label>
+                        <select id="ruleSelect">
+                            <option value="LR">Classic (Left-Right)</option>
+                            <option value="RL">Reverse (Right-Left)</option>
+                            <option value="LLRR">LLRR Pattern</option>
+                            <option value="LRRL">LRRL Pattern</option>
+                        </select>
+                    </div>
+                    <div id="ruleDescription">
+                        <ul>
+                            <li>At a white square: turn 90° right, flip the color, move forward</li>
+                            <li>At a black square: turn 90° left, flip the color, move forward</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center-panel">
+                <canvas id="canvas" width="600" height="450"></canvas>
+            </div>
+
+            <div class="right-panel">
+                <div class="stats">
+                    <h3>Statistics</h3>
+                    <div>Steps: <span id="stepCount">0</span></div>
+                    <div>Position: (<span id="antX">0</span>, <span id="antY">0</span>)</div>
+                    <div>Direction: <span id="antDirection">North</span></div>
+                    <div>Highway Status: <span id="highwayStatus">Not Detected</span></div>
+                    <div>Predicted Highway: <span id="highwayPrediction">~10,400 steps</span></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="description">
+            <h3>About Langton's Ant</h3>
+            <p>
+                Langton's Ant is a two-dimensional cellular automaton that follows very simple rules
+                but creates surprisingly complex patterns. Despite the simplicity of the rules,
+                the ant creates a seemingly random pattern for about 10,000 steps, then starts
+                building a repeating "highway" pattern.
+            </p>
+            <p>
+                This demonstrates how complex behavior can emerge from simple rules - a key concept
+                in complexity theory and artificial life.
+            </p>
+        </div>
+    </div>
+
+    <script src="langtons_ant.js"></script>
+</body>
+</html>
