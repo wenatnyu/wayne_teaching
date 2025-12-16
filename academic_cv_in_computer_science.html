@@ -34,10 +34,10 @@
       }
       a { 
         color: #3b82f6; 
-        text-decoration: none; 
+        text-decoration: underline; 
       }
       .header-banner { 
-        background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%) !important;
+        background: #fff !important;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
@@ -90,11 +90,14 @@
       }
     }
     .header-banner {
-      background: linear-gradient(135deg, #2c5282 0%, #4299e1 100%);
-      padding: 12px 20px 8px 20px;
-      color: #fff;
+      background: #fff;
+      padding: 8px 10px 4px 10px;
+      color: #1a1a1a;
       position: relative;
       overflow: hidden;
+      max-width: 1000px;
+      margin: 2px auto;
+      border-radius: 3px;
     }
     .header-banner::before {
       content: '';
@@ -129,8 +132,7 @@
       font-weight: 800;
       margin: 0 0 12px 0;
       line-height: 1.2;
-      color: #fff;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      color: #1a1a1a;
       letter-spacing: 0.5px;
     }
     .contact-info {
@@ -145,22 +147,22 @@
       align-items: center;
       gap: 6px;
       padding: 6px 14px;
-      background: rgba(255, 255, 255, 0.15);
+      background: rgba(0, 0, 0, 0.05);
       border-radius: 20px;
       backdrop-filter: blur(10px);
       transition: all 0.3s;
     }
     .contact-item:hover {
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(0, 0, 0, 0.1);
       transform: translateY(-2px);
     }
     .contact-item::before {
       content: "";
       width: 6px;
       height: 6px;
-      background: #60a5fa;
+      background: #3b82f6;
       border-radius: 50%;
-      box-shadow: 0 0 8px rgba(96, 165, 250, 0.6);
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
     }
     .photo {
       width: 120px;
@@ -492,7 +494,7 @@
         <div class="contact-info">
           <div class="contact-item">wenyin@nyu.edu</div>
           <div class="contact-item">Shanghai, China 中国上海</div>
-          <div class="contact-item"><a href="https://wenatnyu.github.io/wayne_teaching/" style="color: #fff;"><wenatnyu class="github"></wenatnyu>个人主页</a></div>
+          <div class="contact-item"><a href="https://wenatnyu.github.io/wayne_teaching/" style="color: #3b82f6; text-decoration: underline;">个人主页</a></div>
         </div>
       </div>
       <div class="photo"><img src="wayneyin.jpg" alt="Wayne Yin" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;"/></div>
@@ -638,14 +640,14 @@
 <div class="section">
   <h2>Education | 教育背景</h2>
   <div class="experience-item">
-    <p class="experience-title">M.S. in Computer Science</p>
-    <div style="font-size: 0.95em; color: #64748b;">New York University | 2012–2014</div>
-    <span class="cn" style="font-weight: 600;">计算机科学硕士 · 纽约大学</span>
-  </div>
-  <div class="experience-item">
     <p class="experience-title">Research Assistant in Computer Science, Data Science and Engineering</p>
     <div style="font-size: 0.95em; color: #64748b;">NYU Shanghai | 2018–2020</div>
     <span class="cn" style="font-weight: 600;">研究助理 · 计算机科学、数据科学与工程学院 · 上海纽约大学</span>
+  </div>
+  <div class="experience-item">
+    <p class="experience-title">M.S. in Computer Science</p>
+    <div style="font-size: 0.95em; color: #64748b;">New York University | 2012–2014</div>
+    <span class="cn" style="font-weight: 600;">计算机科学硕士 · 纽约大学</span>
   </div>
   <div class="experience-item">
     <p class="experience-title">B.Eng. in Software Engineering</p>
