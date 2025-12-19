@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wayne Yin 殷闻 | Academic CV | Computer Science 教师简历</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+                   "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.3;
+      color: #1a1a1a;
+      background: #fff;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 2px auto;
+      background: #fff;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    @media print {
+      body { background: #fff; margin: 0; }
+      .container { 
+        box-shadow: none; 
+        margin: 0; 
+        border-radius: 0;
+        max-width: 100%;
+      }
+      .header-banner::before,
+      .header-banner::after {
+        display: none !important;
+      }
+      a { 
+        color: #3b82f6; 
+        text-decoration: underline; 
+      }
+      .header-banner { 
+        background: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .section {
+        page-break-inside: avoid;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .experience-item {
+        page-break-inside: avoid;
+      }
+      .highlight-box {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .tag {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .number-badge {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .highlight {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .highlight-blue {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .skill-card {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+        page-break-inside: avoid;
+      }
+      .contact-item {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .modal {
+        display: none !important;
+      }
+      img {
+        max-width: 100%;
+        page-break-inside: avoid;
+      }
+      h1, h2, h3 {
+        page-break-after: avoid;
+      }
+      .print-hide {
+        display: none !important;
+      }
+    }
+    .header-banner {
+      background: #fff;
+      padding: 8px 10px 4px 10px;
+      color: #1a1a1a;
+      position: relative;
+      overflow: hidden;
+      max-width: 1000px;
+      margin: 2px auto;
+      border-radius: 3px;
+    }
+    .header-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .header-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,255,255,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .header {
+      display: grid;
+      grid-template-columns: 1fr 180px;
+      gap: 32px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    h1 {
+      font-size: 1.85em;
+      font-weight: 800;
+      margin: 0 0 12px 0;
+      line-height: 1.2;
+      color: #1a1a1a;
+      letter-spacing: 0.5px;
+    }
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+      font-size: 0.8em;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+    }
+    .contact-item:hover {
+      background: rgba(0, 0, 0, 0.1);
+      transform: translateY(-2px);
+    }
+    .contact-item::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background: #3b82f6;
+      border-radius: 50%;
+      box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+    }
+    .photo {
+      width: 120px;
+      height: 160px;
+      border-radius: 10px;
+      border: 2px solid rgba(255,255,255,0.8);
+      background: rgba(255,255,255,0.03);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7em;
+      color: rgba(255,255,255,0.4);
+      overflow: hidden;
+      transition: transform 0.2s;
+    }
+    .photo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.2) inset;
+    }
+    .content {
+      padding: 16px 24px;
+    }
+    h2 {
+      font-size: 1.1em;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin: 12px 0 8px 0;
+      padding-bottom: 4px;
+      border-bottom: 2px solid #3b82f6;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background: #60a5fa;
+    }
+    h3 { 
+      font-size: 1.05em;
+      margin-top: 1.2em;
+      color: #1e3a8a;
+      font-weight: 600;
+    }
+    p { 
+      margin: 0.15em 0;
+      line-height: 1.4;
+    }
+    ul { 
+      margin: 0.25em 0 0.35em 1.4em;
+      line-height: 1.4;
+    }
+    li { margin-bottom: 0.15em; }
+    .section { 
+      margin-bottom: 8px;
+      padding: 8px;
+      background: #f8fafc;
+      border-radius: 4px;
+      border-left: 2px solid #3b82f6;
+      transition: transform 0.1s, box-shadow 0.1s;
+    }
+    .section:hover {
+      transform: translateX(4px);
+      box-shadow: 0 4px 12px rgba(59,130,246,0.1);
+    }
+    .cn { 
+      color: #64748b;
+      font-size: 0.92em;
+      display: block;
+      margin-top: 4px;
+    }
+    .transition-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .transition-item {
+      background: rgba(0, 0, 0, 0.02);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-radius: 8px;
+      padding: 10px 12px;
+      page-break-inside: avoid;
+    }
+    .transition-item p {
+      margin: 0 0 6px 0;
+    }
+    .transition-item .cn {
+      margin-top: 6px;
+    }
+    @media print {
+      .transition-item {
+        background: #fff;
+        border: 1px solid #e5e7eb;
+      }
+      .transition-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+    }
+    .tag {
+      display: inline-block;
+      padding: 4px 12px;
+      margin: 3px 4px 3px 0;
+      border-radius: 16px;
+      font-size: 0.75em;
+      font-weight: 500;
+      color: #1e3a8a;
+      background: #e2e8f0;
+      border: 1px solid #cbd5e0;
+    }
+    .tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(59,130,246,0.4);
+    }
+    .experience-item {
+      margin-bottom: 10px;
+      padding: 6px;
+      background: #fff;
+      border-radius: 5px;
+      border-left: 2px solid #60a5fa;
+    }
+    .experience-title {
+      font-weight: 600;
+      color: #1e3a8a;
+      font-size: 1.05em;
+    }
+    .highlight-box {
+      background: #eff6ff;
+      padding: 10px;
+      border-radius: 5px;
+      margin: 10px 0;
+      border-left: 2px solid #3b82f6;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      margin-top: 16px;
+    }
+    .skill-card {
+      background: #fff;
+      padding: 16px;
+      border-radius: 8px;
+      border: 2px solid #e2e8f0;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .skill-card:hover {
+      border-color: #3b82f6;
+      transform: translateY(-2px);
+    }
+    .portfolio img {
+      max-width: 100%;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .portfolio img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      max-width: 95%;
+      max-height: 95%;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 0 50px rgba(255,255,255,0.3);
+    }
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    .modal-close:hover {
+      color: #60a5fa;
+    }
+    a { 
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    a:hover {
+      color: #1e3a8a;
+      text-decoration: underline;
+    }
+    strong {
+      color: #1e3a8a;
+      font-weight: 600;
+    }
+    .number-badge {
+      background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+      color: #fff;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      display: inline-block;
+      margin: 0 4px;
+      box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+      font-size: 0.95em;
+    }
+    
+    /* Mobile responsiveness */
+    @media screen and (max-width: 768px) {
+      .container {
+        margin: 1px auto;
+        border-radius: 2px;
+        padding: 0 10px;
+      }
+      .header-banner {
+        padding: 12px 16px 10px 16px;
+      }
+      .header-banner h1 {
+        font-size: 1.4em;
+        line-height: 1.3;
+      }
+      .header-banner h1 span {
+        display: block;
+        font-size: 0.6em;
+      }
+      .contact-info {
+        gap: 6px;
+        margin-top: 6px;
+      }
+      .contact-item {
+        font-size: 0.75em;
+        padding: 6px 12px;
+      }
+      .photo-frame {
+        width: 100px;
+        height: 140px;
+      }
+      .content {
+        padding: 12px 16px;
+      }
+      h2 {
+        font-size: 1.05em;
+        margin: 10px 0 6px 0;
+        padding-bottom: 3px;
+      }
+      .section {
+        margin-bottom: 6px;
+        padding: 6px;
+      }
+      .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .skill-card {
+        padding: 12px;
+      }
+      .tag {
+        padding: 3px 10px;
+        font-size: 0.7em;
+        margin: 2px 3px 2px 0;
+      }
+      .portfolio img {
+        margin-bottom: 12px;
+      }
+      .highlight-box {
+        padding: 8px;
+      }
+      .experience-item {
+        margin-bottom: 8px;
+        padding: 5px;
+      }
+      p { 
+        line-height: 1.4;
+      }
+      ul { 
+        line-height: 1.4;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .container {
+        margin: 1px auto;
+        border-radius: 2px;
+        padding: 0 8px;
+      }
+      .header-banner {
+        padding: 10px 12px 8px 12px;
+      }
+      .header-banner h1 {
+        font-size: 1.3em;
+        line-height: 1.3;
+      }
+      .contact-item {
+        font-size: 0.7em;
+        padding: 5px 10px;
+      }
+      .photo-frame {
+        width: 80px;
+        height: 120px;
+      }
+      .content {
+        padding: 10px 12px;
+      }
+      h2 {
+        font-size: 1em;
+        margin: 8px 0 5px 0;
+      }
+      .section {
+        margin-bottom: 5px;
+        padding: 5px;
+      }
+      .tag {
+        padding: 2px 8px;
+        font-size: 0.65em;
+      }
+      .highlight-box {
+        padding: 6px;
+      }
+      .experience-item {
+        margin-bottom: 6px;
+        padding: 4px;
+      }
+      p { 
+        line-height: 1.4;
+      }
+      ul { 
+        line-height: 1.4;
+      }
+    }
+    /* === Patch: BK-friendly + print-stable (minimal changes) === */
+
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+ <div class="header-banner">
+    <div class="header">
+      <div>
+        <h1>Wayne Yin 殷闻<br/><span style="font-size: 0.7em; opacity: 0.95;">Teaching-Focused Academic CV – Computer Science</span><br/><span style="font-size: 0.6em; opacity: 0.9;">仅限教学与课程相关经历的学术简历｜计算机科学篇</span></h1>
+        <div class="contact-info">
+          <div class="contact-item">wenyin@nyu.edu</div>
+          <div class="contact-item">Shanghai, China 中国上海</div>
+          <div class="contact-item">+8617602184408</div>
+          <div class="contact-item"><a href="https://wenatnyu.github.io/wayne_teaching/" style="color: #3b82f6; text-decoration: underline;">个人主页</a></div>
+        </div>
+      </div>
+      <div class="photo"><img src="wayneyin.jpg" alt="Wayne Yin" style="width: 100%; height: 100%; object-fit: cover; border-radius: 12px;"/></div>
+    </div>
+  </div>
+
+  <div class="content">
+
+<div class="highlight-box">
+  <h2 style="margin-top: 0;">Profile | 个人简介</h2>
+  <p><strong>Senior Computer Science Educator and Curriculum Leader</strong> with over 12+ years of full-English teaching experience in American and international school systems.</p>
+  <span class="cn">资深计算机科学教师与课程负责人，拥有十二年以上美国及国际体系纯英文教学经验。</span>
+  <p style="margin-top: 16px;">Expert in AP, IB DP, IGCSE, and A Level Computer Science, with additional teaching experience in <span>Physics and Mathematics</span>, and deep understanding of curriculum design, assessment systems, and secondary-to-tertiary transition.</p>
+  <span class="cn">精通 AP、IB DP、IGCSE、A Level 等国际计算机课程体系，同时具备<span>物理与数学</span>教学经验，深入理解课程设计、评估机制及中学到大学的衔接。</span>
+  <p style="margin-top: 16px;">Aligned with holistic education and boarding-school culture, with first-hand experience supporting students’ academic and personal transition into selective boarding school environments.</p>
+  <span class="cn">高度认同全人教育与寄宿学校文化，并具备支持学生完成顶尖寄宿高中学术与个人成长衔接的一线经验。</span>
+</div>
+
+<div class="section">
+  <h2>Boarding School & University Transitions | 寄宿高中与大学衔接</h2>
+  <div class="transition-grid">
+    <div class="transition-item">
+      <p><strong>US Boarding Prep & Transition:</strong> CS/Math strengthening plus interview coaching for selective boarding schools (Andover, Exeter, Choate, Deerfield, Lawrenceville).</p>
+      <span class="cn">美国私立寄宿高中衔接与选拔辅导：面向安多福 Andover、埃克塞特 Exeter、乔特 Choate、迪尔菲尔德 Deerfield、劳伦斯维尔 Lawrenceville 等顶尖学校，开展计算机/数学强化与学术面试辅导。</span>
+    </div>
+    <div class="transition-item">
+      <p><strong>School & University Visits:</strong> Plan and lead visits that support academic orientation, culture fit, and exposure to leading US research universities.</p>
+      <span class="cn">访校与研学：组织并带领美国高中与大学访校，帮助学生完成学术定位、校园文化理解与对顶尖研究型大学的初步接触。</span>
+    </div>
+    <div class="transition-item">
+      <p><strong>Selective University Exposure:</strong> Academic prep and mentoring aligned with expectations of Harvard, Yale, Princeton, MIT, UPenn, Stanford, Columbia, and UChicago.</p>
+      <span class="cn">顶尖大学对标：课程与学术指导对标哈佛、耶鲁、普林斯顿、麻省理工、宾大、斯坦福、哥大、芝大等世界一流高校的期望。</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Curriculum & Teaching Expertise | 教学与课程专长</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px;">
+    <span class="tag">AP Computer Science A (CSA)<br/>AP 计算机科学 A</span>
+    <span class="tag">AP Computer Science Principles (CSP)<br/>AP 计算机科学原理</span>
+    <span class="tag">IB DP Computer Science (SL/HL)<br/>IB DP 计算机科学</span>
+    <span class="tag">IGCSE & A Level Computer Science<br/>IGCSE 与 A Level 计算机</span>
+    <span class="tag">Artificial Intelligence & Machine Learning<br/>人工智能与机器学习</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Competition, Research & Academic Writing | 竞赛、科研与论文指导</h2>
+  <p>Coaching for international CS competitions, interdisciplinary STEM projects, and academic research writing.</p>
+  <span class="cn">长期指导国际计算机竞赛、跨学科 STEM 项目与学术写作。</span>
+  <div style="margin-top: 12px;">
+    <div style="font-weight: 600; margin-bottom: 6px;">Competition Coaching | 竞赛指导:</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+      <span class="tag">USACO<br/>美国计算机奥赛</span>
+      <span class="tag">CCC<br/>加拿大计算机竞赛</span>
+      <span class="tag">ACSL<br/>美国计算机科学联盟</span>
+      <span class="tag">OUCC<br/>牛津大学计算挑战赛</span>
+      <span class="tag">VEX Robotics<br/>VEX机器人竞赛</span>
+      <span class="tag">Yau Science Awards<br/>丘成桐科学</span>
+      <span class="tag">ICPC-style Training<br/>ICPC风格训练</span>
+    </div>
+  </div>
+  <div style="margin-top: 12px;">
+    <div style="font-weight: 600; margin-bottom: 6px;">Research & Writing Supervision | 科研与论文辅导:</div>
+    <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+      <span class="tag">EPQ<br/>英国拓展项目认证</span>
+      <span class="tag">HPQ<br/>英国高级项目认证</span>
+      <span class="tag">IPQ<br/>国际项目认证</span>
+      <span class="tag">IB IA<br/>IB内部评估</span>
+      <span class="tag">IB EE<br/>IB拓展论文</span>
+      <span class="tag">Pioneer Academics<br/>先锋学者研究论文</span>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Personal Course Websites | 个人课程网站项目（近期部分）</h2>
+  <p>Self-developed interactive course websites and learning platforms demonstrating expertise in curriculum design and educational technology.</p>
+  <span class="cn">自主开发的互动课程网站和学习平台，展示课程设计和教育技术专长。</span>
+  
+  <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+    <div class="skill-card">
+      <div style="font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">📊 Mathematics Course</div>
+      <div style="font-size: 0.9em; margin-bottom: 12px;">IGCSE Mathematics 0580 Interactive Platform</div>
+      <span class="cn" style="display: block; margin-bottom: 12px;">IGCSE 数学 0580 互动平台</span>
+      <a class="print-hide" href="https://wenatnyu.github.io/IG0580/" target="_blank" style="color: #3b82f6; font-weight: 500;">→ Visit Website</a>
+    </div>
+    
+    <div class="skill-card">
+      <div style="font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">💻 Computer Science Course</div>
+      <div style="font-size: 0.9em; margin-bottom: 12px;">IGCSE Computer Science 0478 Platform</div>
+      <span class="cn" style="display: block; margin-bottom: 12px;">IGCSE 计算机科学 0478 平台</span>
+      <a class="print-hide" href="https://wenatnyu.github.io/IGCS0478/" target="_blank" style="color: #3b82f6; font-weight: 500;">→ Visit Website</a>
+    </div>
+    
+    <div class="skill-card">
+      <div style="font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">🏆 Competition Training</div>
+      <div style="font-size: 0.9em; margin-bottom: 12px;">USACO Competition Mock Platform</div>
+      <span class="cn" style="display: block; margin-bottom: 12px;">USACO 竞赛模拟平台</span>
+      <a class="print-hide" href="https://wenatnyu.github.io/usaco/mock_index.html" target="_blank" style="color: #3b82f6; font-weight: 500;">→ Visit Website</a>
+    </div>
+    
+    <div class="skill-card">
+      <div style="font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">🎮 Educational Game</div>
+      <div style="font-size: 0.9em; margin-bottom: 12px;">Interactive Story-based Learning Game</div>
+      <span class="cn" style="display: block; margin-bottom: 12px;">故事式互动学习游戏</span>
+      <a class="print-hide" href="https://wenatnyu.github.io/zeolym_story/chapter2.html" target="_blank" style="color: #3b82f6; font-weight: 500;">→ Visit Website</a>
+    </div>
+    
+    <div class="skill-card">
+      <div style="font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">🔬 Research Projects</div>
+      <div style="font-size: 0.9em; margin-bottom: 12px;">Academic Research & Student Supervision</div>
+      <span class="cn" style="display: block; margin-bottom: 12px;">学术研究与学生指导</span>
+      <a class="print-hide" href="langton/langtons_ant.html" target="_blank" style="color: #3b82f6; font-weight: 500;">→ Visit Website</a>
+    </div>
+    
+    <div class="skill-card">
+      <div style="font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">💡 Student Projects</div>
+      <div style="font-size: 0.9em; margin-bottom: 12px;">Student Work & Portfolio Showcase</div>
+      <span class="cn" style="display: block; margin-bottom: 12px;">学生作品与项目展示</span>
+      <a class="print-hide" href="https://github.com/Wen-course" target="_blank" style="color: #3b82f6; font-weight: 500;">→ Visit Website</a>
+    </div>
+  </div>
+</div>
+<div class="section">
+  <h2>Professional Experience | 教学与学术工作经历</h2>
+
+  <h3>Secondary Education – International Curriculum (Primary Track)</h3>
+  <p style="font-size: 0.9em; color: #64748b; margin-bottom: 12px;">
+    Primary teaching track in secondary international education, with concurrent appointments in higher education and program development.
+  </p>
+
+  <div class="experience-item">
+    <p class="experience-title">Founding Faculty & Director of Academic Affairs; Head of Computer Science</p>
+    <div style="font-size: 0.95em; color: #64748b; margin-bottom: 8px;">
+      Zeolym Private Senior High School, Shanghai | 2024–2025
+    </div>
+    <span class="cn" style="font-weight: 600;">
+      创校教师｜教务主任｜计算机科学组长｜信息技术与人工智能学科负责人 · 上海民办籽奥高级中学
+    </span>
+    <ul style="margin: 0.5em 0 0.2em 1.2em;">
+      <li>Led academic affairs and curriculum implementation across Computer Science, Information Technology, and Artificial Intelligence.</li>
+      <li>Designed and delivered IB DP, A Level, and AP Computer Science courses, including internal assessment and extended essay supervision.</li>
+      <li>Coordinated academic operations, teaching schedules, and cross-disciplinary collaboration.</li>
+    </ul>
+    <ul class="cn" style="margin: 0.35em 0 0 1.2em;">
+      <li>统筹教务工作并推动计算机、信息技术与人工智能相关课程落地实施。</li>
+      <li>设计并讲授 IB DP、A Level 与 AP 计算机课程，负责 IA/EE 等学术指导与评估支持。</li>
+      <li>协调教学安排与跨学科协作，保障学术体系高效运行。</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+    <p class="experience-title">International Curriculum Computer Science & Mathematics Educator (Secondary Level)</p>
+    <div style="font-size: 0.95em; color: #64748b; margin-bottom: 8px;">
+      International Curriculum Programs (Secondary, Concurrent Appointments) | 2015–2025
+    </div>
+    <ul style="margin: 0.5em 0 0.2em 1.2em;">
+      <li>Delivered full-cycle instruction aligned with international school syllabi, including curriculum planning, assessment design, IA/EE supervision, academic mentoring, and parent communication.</li>
+      <li>Supported students from diverse international school backgrounds through long-term academic planning and progression.</li>
+    </ul>
+    <ul class="cn" style="margin: 0.35em 0 0 1.2em;">
+      <li>面向国际学校学生开展完整课程周期教学，严格对标学校课程大纲，涵盖课程规划、评估设计与实施、IA/EE 指导、学术导师支持及家校沟通。</li>
+      <li>支持不同背景学生进行长期学术规划与阶段性提升，保障学习路径与目标达成。</li>
+    </ul>
+  </div>
+
+  <h3>Higher Education – University Teaching (Concurrent)</h3>
+
+  <div class="experience-item">
+    <p class="experience-title">Founding Faculty; Lecturer in Computer Science & Data Science</p>
+    <div style="font-size: 0.95em; color: #64748b; margin-bottom: 8px;">
+      NYU Shanghai – Computer Science & Data Science | 2017–2024
+    </div>
+    <span class="cn" style="font-weight: 600;">
+      创校教师 · 上海纽约大学 计算机与数据科学学院
+    </span>
+    <ul style="margin: 0.5em 0 0.2em 1.2em;">
+      <li>Taught undergraduate courses in Computer Science and Data Science in a full-English academic environment.</li>
+      <li>Supported academically advanced secondary students in bridging IB, A Level, and AP curricula to first-year university Computer Science.</li>
+    </ul>
+    <ul class="cn" style="margin: 0.35em 0 0 1.2em;">
+      <li>在全英文环境下教授计算机与数据科学相关本科课程。</li>
+      <li>支持学术能力突出的中学生完成 IB/A Level/AP 与大学一年级计算机课程的衔接过渡。</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+    <p class="experience-title">Adjunct Professor (Computer Science)</p>
+    <div style="font-size: 0.95em; color: #64748b; margin-bottom: 8px;">
+      Rutgers University · Syracuse University · Clarke Institute | 2020–2021
+    </div>
+    <span class="cn" style="font-weight: 600;">
+      外聘教授 · 美国罗格斯大学、雪城大学、克拉克研究院
+    </span>
+    <ul style="margin: 0.5em 0 0.2em 1.2em;">
+      <li>Taught university-level Computer Science courses and maintained rigorous academic standards.</li>
+    </ul>
+    <ul class="cn" style="margin: 0.35em 0 0 1.2em;">
+      <li>教授大学阶段计算机课程，保持严格的学术标准与教学质量。</li>
+    </ul>
+  </div>
+
+  <div class="experience-item">
+    <p class="experience-title">Lecturer in Physics</p>
+    <div style="font-size: 0.95em; color: #64748b; margin-bottom: 8px;">
+      Pennsylvania State University | 2019–2020
+    </div>
+    <span class="cn" style="font-weight: 600;">
+      物理讲师 · 美国宾夕法尼亚州立大学
+    </span>
+    <ul style="margin: 0.5em 0 0.2em 1.2em;">
+      <li>Taught undergraduate Physics courses, contributing to interdisciplinary STEM education.</li>
+    </ul>
+    <ul class="cn" style="margin: 0.35em 0 0 1.2em;">
+      <li>教授本科物理课程，形成计算机、数学与物理的跨学科教学优势。</li>
+    </ul>
+  </div>
+
+  <h3>Educational Entrepreneurship & Program Development (Concurrent)</h3>
+
+  <div class="experience-item">
+    <p class="experience-title">Founding Team Member & Academic Program Director</p>
+    <div style="font-size: 0.95em; color: #64748b; margin-bottom: 8px;">
+      Educational Entrepreneurship & Program Development (Concurrent) | 2012–2018
+    </div>
+    <span class="cn" style="font-weight: 600;">
+      创始团队成员｜赛龙教育（副校长）、傲梦编程（教研总监）、码趣编程（项目总监）
+    </span>
+    <ul style="margin: 0.5em 0 0.2em 1.2em;">
+      <li>Led curriculum design and academic program development for secondary-level Computer Science education.</li>
+      <li>Oversaw teaching frameworks, faculty training, and program implementation across multiple educational initiatives.</li>
+    </ul>
+    <ul class="cn" style="margin: 0.35em 0 0 1.2em;">
+      <li>主导中学阶段计算机课程体系设计与学术项目建设。</li>
+      <li>统筹教学框架、师资培训与项目落地实施，支持多项教育项目稳定运行。</li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+<div class="section">
+  <h2>Education | 教育背景</h2>
+  <div class="experience-item">
+    <p class="experience-title">Research Assistant in Computer Science, Data Science and Engineering</p>
+    <div style="font-size: 0.95em; color: #64748b;">NYU Shanghai | 2018–2020</div>
+    <span class="cn" style="font-weight: 600;">研究助理 · 计算机科学、数据科学与工程学院 · 上海纽约大学</span>
+  </div>
+  <div class="experience-item">
+    <p class="experience-title">M.S. in Computer Science</p>
+    <div style="font-size: 0.95em; color: #64748b;">New York University | 2012–2014</div>
+    <span class="cn" style="font-weight: 600;">计算机科学硕士 · 纽约大学</span>
+  </div>
+  <div class="experience-item">
+    <p class="experience-title">B.Eng. in Software Engineering</p>
+    <div style="font-size: 0.95em; color: #64748b;">Beijing Institute of Technology | 2008–2012</div>
+    <span class="cn" style="font-weight: 600;">软件工程本科 · 北京理工大学</span>
+  </div>
+</div>
+
+<div class="highlight-box">
+  <h2 style="margin-top: 0;">Parent & Student Feedback | 家校沟通,家长与学生评价</h2>
+  <p>Highly experienced in communicating academic progress and development plans with students and parents, maintaining <span>consistently high satisfaction and trust</span>.</p>
+  <span class="cn">擅长与学生及家长进行学业进展与成长规划沟通,长期保持<span>高度满意度与信任度</span>。</span>
+  
+  <div style="margin-top: 20px; padding: 16px; background: #fff; border-radius: 8px;">
+    <p style="margin: 0; margin-bottom: 20px; font-weight: 600; color: #1e3a8a;">Recent Data Snapshots | 近期部分数据截图</p>
+    
+    <div style="display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 24px;">
+      <div style="text-align: center;">
+        <img src="comments1.jpg" alt="All Student Comments 1" style="width: 100%; max-width: 100%; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.3s;" onclick="openModal(this.src)"/>
+        <p style="margin-top: 8px; font-size: 0.9em; color: #64748b; font-weight: 500;">All Student Comments 1 | 所有学生评价1 (点击放大)</p>
+      </div>
+      
+      <div style="text-align: center;">
+        <img src="comments2.png" alt="All Student Comments 2" style="width: 100%; max-width: 100%; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.3s;" onclick="openModal(this.src)"/>
+        <p style="margin-top: 8px; font-size: 0.9em; color: #64748b; font-weight: 500;">All Student Comments 2 | 所有学生评价2 (点击放大)</p>
+      </div>
+    </div>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="text-align: center;">
+          <img src="comment_parent1.jpg" alt="Parent Feedback 1" style="width: 100%; max-width: 400px; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.3s;" onclick="openModal(this.src)"/>
+          <p style="margin-top: 8px; font-size: 0.85em; color: #64748b;">Parent Feedback 1 | 家长反馈1</p>
+        </div>
+        
+        <div style="text-align: center;">
+          <img src="comment_parent3.png" alt="Parent Feedback 3" style="width: 100%; max-width: 400px; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.3s;" onclick="openModal(this.src)"/>
+          <p style="margin-top: 8px; font-size: 0.85em; color: #64748b;">Parent Feedback 3 | 家长反馈3</p>
+        </div>
+      </div>
+      
+      <div style="display: flex; flex-direction: column; gap: 14px;">
+        <div style="text-align: center;">
+          <img src="comment_parent2.jpg" alt="Parent Feedback 2" style="width: 100%; max-width: 400px; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.3s;" onclick="openModal(this.src)"/>
+          <p style="margin-top: 8px; font-size: 0.85em; color: #64748b;">Parent Feedback 2 | 家长反馈2</p>
+        </div>
+        
+        <div style="text-align: center;">
+          <img src="comment_online.jpg" alt="Online Comments" style="width: 100%; max-width: 267px; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.3s;" onclick="openModal(this.src)"/>
+          <p style="margin-top: 8px; font-size: 0.85em; color: #64748b;">Social Media Comments | 网络评价</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+<!-- Image Modal -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="modal-close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+  function openModal(src) {
+    document.getElementById('imageModal').style.display = 'flex';
+    document.getElementById('modalImage').src = src;
+    document.body.style.overflow = 'hidden';
+  }
+  
+  function closeModal() {
+    document.getElementById('imageModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+  
+  // Close modal with ESC key
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeModal();
+    }
+  });
+</script>
+
+</body>
+</html>
