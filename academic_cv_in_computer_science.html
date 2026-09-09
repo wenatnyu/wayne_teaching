@@ -78,9 +78,6 @@
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
-      .modal {
-        display: none !important;
-      }
       img {
         max-width: 100%;
         page-break-inside: avoid;
@@ -302,38 +299,6 @@
       transform: scale(1.02);
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.9);
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-content {
-      max-width: 95%;
-      max-height: 95%;
-      object-fit: contain;
-      border-radius: 8px;
-      box-shadow: 0 0 50px rgba(255,255,255,0.3);
-    }
-    .modal-close {
-      position: absolute;
-      top: 20px;
-      right: 40px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: color 0.3s;
-    }
-    .modal-close:hover {
-      color: #60a5fa;
-    }
     a { 
       color: #3b82f6;
       text-decoration: none;
@@ -483,6 +448,8 @@
       }
     }
   </style>
+  <link rel="stylesheet" href="assets/cv-projects.css" />
+  <link rel="stylesheet" href="assets/cv-feedback.css" />
 </head>
 <body>
 
@@ -552,55 +519,101 @@
   </div>
 </div>
 
-<div class="section">
-  <h2>Personal Course Websites | 个人课程网站项目（近期部分）</h2>
-  <p>Self-developed interactive course websites and learning platforms demonstrating expertise in curriculum design and educational technology.</p>
-  <span class="cn">自主开发的互动课程网站和学习平台，展示课程设计和教育技术专长。</span>
-  
-  <div style="margin-top: 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
-    <div class="skill-card">
-      <div style="font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">📊 Mathematics Course</div>
-      <div style="font-size: 0.9em; margin-bottom: 12px;">IGCSE Mathematics 0580 Interactive Platform</div>
-      <span class="cn" style="display: block; margin-bottom: 12px;">IGCSE 数学 0580 互动平台</span>
-      <a href="https://wenatnyu.github.io/IG0580/" target="_blank" style="color: #3b82f6; font-weight: 500;">→ Visit Website</a>
-    </div>
-    
-    <div class="skill-card">
-      <div style="font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">💻 Computer Science Course</div>
-      <div style="font-size: 0.9em; margin-bottom: 12px;">IGCSE Computer Science 0478 Platform</div>
-      <span class="cn" style="display: block; margin-bottom: 12px;">IGCSE 计算机科学 0478 平台</span>
-      <a href="https://wenatnyu.github.io/IGCS0478/" target="_blank" style="color: #3b82f6; font-weight: 500;">→ Visit Website</a>
-    </div>
-    
-    <div class="skill-card">
-      <div style="font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">🏆 Competition Training</div>
-      <div style="font-size: 0.9em; margin-bottom: 12px;">USACO Competition Mock Platform</div>
-      <span class="cn" style="display: block; margin-bottom: 12px;">USACO 竞赛模拟平台</span>
-      <a href="https://wenatnyu.github.io/usaco/mock_index.html" target="_blank" style="color: #3b82f6; font-weight: 500;">→ Visit Website</a>
-    </div>
-    
-    <div class="skill-card">
-      <div style="font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">🎮 Educational Game</div>
-      <div style="font-size: 0.9em; margin-bottom: 12px;">Interactive Story-based Learning Game</div>
-      <span class="cn" style="display: block; margin-bottom: 12px;">故事式互动学习游戏</span>
-      <a href="https://wenatnyu.github.io/zeolym_story/chapter2.html" target="_blank" style="color: #3b82f6; font-weight: 500;">→ Visit Website</a>
-    </div>
-    
-    <div class="skill-card">
-      <div style="font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">🔬 Research Projects</div>
-      <div style="font-size: 0.9em; margin-bottom: 12px;">Academic Research & Student Supervision</div>
-      <span class="cn" style="display: block; margin-bottom: 12px;">学术研究与学生指导</span>
-      <a href="langton/langtons_ant.html" target="_blank" style="color: #3b82f6; font-weight: 500;">→ Visit Website</a>
-    </div>
-    
-    <div class="skill-card">
-      <div style="font-weight: 600; color: #1e3a8a; margin-bottom: 8px;">💡 Student Projects</div>
-      <div style="font-size: 0.9em; margin-bottom: 12px;">Student Work & Portfolio Showcase</div>
-      <span class="cn" style="display: block; margin-bottom: 12px;">学生作品与项目展示</span>
-      <a href="https://github.com/Wen-course" target="_blank" style="color: #3b82f6; font-weight: 500;">→ Visit Website</a>
-    </div>
+<section class="section cv-projects" id="projects" aria-labelledby="projects-title">
+  <h2 id="projects-title">Course Websites & Creative Projects | 课程网站与个人作品</h2>
+  <p class="project-intro">Self-developed course websites, learning platforms and interactive campus experiences.</p>
+  <span class="cn">自主开发的课程网站、学习平台与校园互动项目，让课堂内外的想法落地。</span>
+  <p class="project-group-label">RECENT PROJECTS · 近期作品</p>
+  <div class="project-grid">
+    <a class="project-card" href="https://wenatnyu.github.io/as-course-2027/" target="_blank" rel="noopener noreferrer">
+      <img class="project-thumbnail" src="assets/projects/as-computer-science.jpg" alt="AS Computer Science 9618 网站首页：二进制、十进制与十六进制" width="1280" height="720" loading="lazy" decoding="async" />
+      <div class="project-card-body">
+        <span class="project-category">COMPUTER SCIENCE · CAMBRIDGE 9618</span>
+        <h3>AS Computer Science</h3>
+        <p>Interactive slides, homework &amp; course map.</p>
+        <span class="cn">AS 计算机科学 · 互动课件、作业与课程地图</span>
+        <span class="project-visit">Visit website · 访问网站 <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+    <a class="project-card" href="https://wenatnyu.github.io/ap-calculus-bc-2026/" target="_blank" rel="noopener noreferrer">
+      <img class="project-thumbnail" src="assets/projects/ap-calculus-bc.jpg" alt="AP Calculus BC 网站首页：极限、导数、积分与微分方程" width="1280" height="720" loading="lazy" decoding="async" />
+      <div class="project-card-body">
+        <span class="project-category">MATHEMATICS · ADVANCED PLACEMENT</span>
+        <h3>AP Calculus BC</h3>
+        <p>Lesson slides, quizzes &amp; review resources.</p>
+        <span class="cn">AP 微积分 BC · 课程讲义、测验与复习资源</span>
+        <span class="project-visit">Visit website · 访问网站 <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+    <a class="project-card" href="https://zeolym-homepage.netlify.app/" target="_blank" rel="noopener noreferrer">
+      <img class="project-thumbnail" src="assets/projects/zeolym-campus.jpg" alt="籽奥617电竞节网站首页：3D 互动校园地图" width="1280" height="720" loading="lazy" decoding="async" />
+      <div class="project-card-body">
+        <span class="project-category">CAMPUS · INTERACTIVE EXPERIENCE</span>
+        <h3>Zeolym Campus &amp; Esports</h3>
+        <p>An interactive campus for the Zeolym 617 Esports Festival.</p>
+        <span class="cn">籽奥617电竞节 · 3D 互动校园与活动网站</span>
+        <span class="project-visit">Visit website · 访问网站 <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
   </div>
-</div>
+  <p class="project-group-label">MORE TO EXPLORE · 更多课程与项目</p>
+  <div class="project-grid project-grid--more">
+    <a class="project-card project-card--compact" href="https://wenatnyu.github.io/IG0580/" target="_blank" rel="noopener noreferrer">
+      <div class="project-card-body">
+        <span class="project-category">MATHEMATICS</span>
+        <h3>IGCSE Mathematics 0580</h3>
+        <p>Interactive mathematics platform.</p>
+        <span class="cn">IGCSE 数学 0580 互动平台</span>
+        <span class="project-visit">Visit website · 访问网站 <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+    <a class="project-card project-card--compact" href="https://wenatnyu.github.io/IGCS0478/" target="_blank" rel="noopener noreferrer">
+      <div class="project-card-body">
+        <span class="project-category">COMPUTER SCIENCE</span>
+        <h3>IGCSE Computer Science 0478</h3>
+        <p>Computer science course platform.</p>
+        <span class="cn">IGCSE 计算机科学 0478 平台</span>
+        <span class="project-visit">Visit website · 访问网站 <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+    <a class="project-card project-card--compact" href="https://wenatnyu.github.io/usaco/mock_index.html" target="_blank" rel="noopener noreferrer">
+      <div class="project-card-body">
+        <span class="project-category">COMPETITION TRAINING</span>
+        <h3>USACO Competition Practice</h3>
+        <p>Competition mock platform.</p>
+        <span class="cn">USACO 竞赛模拟平台</span>
+        <span class="project-visit">Visit website · 访问网站 <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+    <a class="project-card project-card--compact" href="https://wenatnyu.github.io/zeolym_story/chapter2.html" target="_blank" rel="noopener noreferrer">
+      <div class="project-card-body">
+        <span class="project-category">EDUCATIONAL GAME</span>
+        <h3>Story-based Learning Game</h3>
+        <p>An interactive learning adventure.</p>
+        <span class="cn">故事式互动学习游戏</span>
+        <span class="project-visit">Visit website · 访问网站 <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+    <a class="project-card project-card--compact" href="langton/langtons_ant.html" target="_blank" rel="noopener noreferrer">
+      <div class="project-card-body">
+        <span class="project-category">RESEARCH PROJECTS</span>
+        <h3>Academic Research &amp; Supervision</h3>
+        <p>Research projects &amp; student supervision.</p>
+        <span class="cn">学术研究与学生指导</span>
+        <span class="project-visit">Visit website · 访问网站 <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+    <a class="project-card project-card--compact" href="https://github.com/Wen-course" target="_blank" rel="noopener noreferrer">
+      <div class="project-card-body">
+        <span class="project-category">STUDENT PROJECTS</span>
+        <h3>Student Work &amp; Portfolio</h3>
+        <p>Student projects and creations.</p>
+        <span class="cn">学生作品与项目展示</span>
+        <span class="project-visit">Visit website · 访问网站 <span aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+  </div>
+</section>
 
 <div class="section">
   <h2>Professional Experience | 教学相关工作经历</h2>
@@ -657,82 +670,109 @@
   </div>
 </div>
 
-<div class="highlight-box">
-  <h2 style="margin-top: 0;">Parent & Student Feedback | 家校沟通,家长与学生评价</h2>
-  <p>Highly experienced in communicating academic progress and development plans with students and parents, maintaining <span>consistently high satisfaction and trust</span>.</p>
-  <span class="cn">擅长与学生及家长进行学业进展与成长规划沟通,长期保持<span>高度满意度与信任度</span>。</span>
-  
-  <div style="margin-top: 20px; padding: 16px; background: #fff; border-radius: 8px;">
-    <p style="margin: 0; margin-bottom: 20px; font-weight: 600; color: #1e3a8a;">Recent Data Snapshots | 近期部分数据截图</p>
-    
-    <div style="display: grid; grid-template-columns: 1fr; gap: 16px; margin-bottom: 24px;">
-      <div style="text-align: center;">
-        <img src="comments1.jpg" alt="All Student Comments 1" style="width: 100%; max-width: 100%; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.3s;" onclick="openModal(this.src)"/>
-        <p style="margin-top: 8px; font-size: 0.9em; color: #64748b; font-weight: 500;">All Student Comments 1 | 所有学生评价1 (点击放大)</p>
-      </div>
-      
-      <div style="text-align: center;">
-        <img src="comments2.png" alt="All Student Comments 2" style="width: 100%; max-width: 100%; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.3s;" onclick="openModal(this.src)"/>
-        <p style="margin-top: 8px; font-size: 0.9em; color: #64748b; font-weight: 500;">All Student Comments 2 | 所有学生评价2 (点击放大)</p>
-      </div>
-    </div>
-    
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-      <div style="display: flex; flex-direction: column; gap: 14px;">
-        <div style="text-align: center;">
-          <img src="comment_parent1.jpg" alt="Parent Feedback 1" style="width: 100%; max-width: 400px; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.3s;" onclick="openModal(this.src)"/>
-          <p style="margin-top: 8px; font-size: 0.85em; color: #64748b;">Parent Feedback 1 | 家长反馈1</p>
-        </div>
-        
-        <div style="text-align: center;">
-          <img src="comment_parent3.png" alt="Parent Feedback 3" style="width: 100%; max-width: 400px; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.3s;" onclick="openModal(this.src)"/>
-          <p style="margin-top: 8px; font-size: 0.85em; color: #64748b;">Parent Feedback 3 | 家长反馈3</p>
-        </div>
-      </div>
-      
-      <div style="display: flex; flex-direction: column; gap: 14px;">
-        <div style="text-align: center;">
-          <img src="comment_parent2.jpg" alt="Parent Feedback 2" style="width: 100%; max-width: 400px; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.3s;" onclick="openModal(this.src)"/>
-          <p style="margin-top: 8px; font-size: 0.85em; color: #64748b;">Parent Feedback 2 | 家长反馈2</p>
-        </div>
-        
-        <div style="text-align: center;">
-          <img src="comment_online.jpg" alt="Online Comments" style="width: 100%; max-width: 267px; height: auto; border: 2px solid #e2e8f0; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); cursor: pointer; transition: transform 0.3s;" onclick="openModal(this.src)"/>
-          <p style="margin-top: 8px; font-size: 0.85em; color: #64748b;">Social Media Comments | 网络评价</p>
-        </div>
-      </div>
-    </div>
+<section class="cv-feedback" id="feedback" aria-labelledby="cv-feedback-title">
+  <header class="cv-feedback__header">
+    <p class="cv-feedback__eyebrow">PARENT &amp; STUDENT FEEDBACK · 家长与学生评价</p>
+    <h2 id="cv-feedback-title">Kind words, kept close.<span lang="zh-CN">把温暖的回声，留在这里。</span></h2>
+    <p class="cv-feedback__intro">Notes, conversations, and little moments from the classroom.<span lang="zh-CN">来自学生与家长的留言，和那些值得珍藏的课堂回忆。</span></p>
+  </header>
+
+  <div class="cv-feedback__featured">
+    <figure class="cv-feedback__photo">
+      <a class="cv-feedback__open" href="assets/feedback/student-interview.png" data-title="Jacob 同学的采访" data-caption="Student interview · 学生采访截图" aria-label="放大查看 Jacob 同学的采访 · View student interview">
+        <img src="assets/feedback/student-interview.png" width="652" height="410" loading="lazy" decoding="async" alt="学生采访截图，字幕写着：我最喜欢的是我们 BC 的老师。" />
+        <span class="cv-feedback__expand" aria-hidden="true">↗</span>
+      </a>
+      <figcaption class="cv-feedback__caption">
+        <p class="cv-feedback__quote" lang="zh-CN">“我最喜欢的是我们 BC 的老师。”</p>
+        <strong>Jacob 同学的采访</strong>
+        <span>Student interview · 学生采访截图</span>
+      </figcaption>
+    </figure>
+    <figure class="cv-feedback__photo">
+      <a class="cv-feedback__open" href="assets/feedback/student-letter.jpg" data-title="一封写给老师的信" data-caption="A student's note · Message to My Teacher" aria-label="放大阅读一封写给老师的信 · Read a student's note">
+        <img src="assets/feedback/student-letter.jpg" width="1046" height="900" loading="lazy" decoding="async" alt="A student's Message to My Teacher, recalling learning Python, computer science revision, and wishing to continue classes with the same teacher." />
+        <span class="cv-feedback__expand" aria-hidden="true">↗</span>
+      </a>
+      <figcaption class="cv-feedback__caption">
+        <strong>一封写给老师的信</strong>
+        <span>A student's note · Message to My Teacher</span>
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="cv-feedback__wall">
+    <figure class="cv-feedback__photo">
+      <a class="cv-feedback__open" href="comments1.jpg" data-title="教学评价摘录 · 01" data-caption="Teaching feedback · 教学反馈截图" aria-label="放大阅读教学评价摘录 1 · Read teaching feedback 1">
+        <img src="comments1.jpg" width="1454" height="424" loading="lazy" decoding="async" alt="教学评价表截图：关于课堂讲解、关心学生、沟通与成长的反馈。" />
+        <span class="cv-feedback__expand" aria-hidden="true">↗</span>
+      </a>
+      <figcaption class="cv-feedback__caption"><strong>教学评价摘录 · 01</strong><span>Teaching feedback · 教学反馈</span></figcaption>
+    </figure>
+    <figure class="cv-feedback__photo">
+      <a class="cv-feedback__open" href="comments2.png" data-title="教学评价摘录 · 02" data-caption="Teaching feedback · 教学反馈截图" aria-label="放大阅读教学评价摘录 2 · Read teaching feedback 2">
+        <img src="comments2.png" width="1579" height="604" loading="lazy" decoding="async" alt="第二张教学评价表完整截图。" />
+        <span class="cv-feedback__expand" aria-hidden="true">↗</span>
+      </a>
+      <figcaption class="cv-feedback__caption"><strong>教学评价摘录 · 02</strong><span>Teaching feedback · 教学反馈</span></figcaption>
+    </figure>
+    <figure class="cv-feedback__photo">
+      <a class="cv-feedback__open" href="comment_parent1.jpg" data-title="家校之间的对话 · 01" data-caption="Parent message · 家长留言" aria-label="放大阅读家长留言 1 · Read parent message 1">
+        <img src="comment_parent1.jpg" width="800" height="456" loading="lazy" decoding="async" alt="家长聊天留言截图，感谢老师的关心并交流孩子的学习习惯。" />
+        <span class="cv-feedback__expand" aria-hidden="true">↗</span>
+      </a>
+      <figcaption class="cv-feedback__caption"><strong>家校之间的对话 · 01</strong><span>Parent message · 家长留言</span></figcaption>
+    </figure>
+    <figure class="cv-feedback__photo">
+      <a class="cv-feedback__open" href="comment_parent2.jpg" data-title="家校之间的对话 · 02" data-caption="Parent message · 家长留言" aria-label="放大阅读家长留言 2 · Read parent message 2">
+        <img src="comment_parent2.jpg" width="800" height="168" loading="lazy" decoding="async" alt="第二张家长反馈聊天截图。" />
+        <span class="cv-feedback__expand" aria-hidden="true">↗</span>
+      </a>
+      <figcaption class="cv-feedback__caption"><strong>家校之间的对话 · 02</strong><span>Parent message · 家长留言</span></figcaption>
+    </figure>
+    <figure class="cv-feedback__photo">
+      <a class="cv-feedback__open" href="comment_parent3.png" data-title="家校之间的对话 · 03" data-caption="Parent message · 家长留言" aria-label="放大阅读家长留言 3 · Read parent message 3">
+        <img src="comment_parent3.png" width="872" height="452" loading="lazy" decoding="async" alt="第三张家长反馈聊天截图。" />
+        <span class="cv-feedback__expand" aria-hidden="true">↗</span>
+      </a>
+      <figcaption class="cv-feedback__caption"><strong>家校之间的对话 · 03</strong><span>Parent message · 家长留言</span></figcaption>
+    </figure>
+    <figure class="cv-feedback__photo">
+      <a class="cv-feedback__open" href="comment_online.jpg" data-title="屏幕另一端的鼓励" data-caption="Social media comments · 网络评价" aria-label="放大阅读网络评价 · Read social media comments">
+        <img src="comment_online.jpg" width="1279" height="2302" loading="lazy" decoding="async" alt="包含采访画面与网友鼓励留言的完整网络评价截图。" />
+        <span class="cv-feedback__expand" aria-hidden="true">↗</span>
+      </a>
+      <figcaption class="cv-feedback__caption"><strong>屏幕另一端的鼓励</strong><span>Social media comments · 网络评价</span></figcaption>
+    </figure>
+  </div>
+  <p class="cv-feedback__note">每一张都可以点开，慢慢读。 · Open any photo to read the full story.</p>
+</section>
+
   </div>
 </div>
 
+<dialog class="cv-feedback-dialog" id="cv-feedback-dialog" aria-labelledby="cv-feedback-dialog-title" aria-describedby="cv-feedback-dialog-caption">
+  <header class="cv-feedback-dialog__header">
+    <div>
+      <h2 id="cv-feedback-dialog-title">Parent &amp; Student Feedback</h2>
+      <p class="cv-feedback-dialog__meta" id="cv-feedback-dialog-caption" aria-live="polite"></p>
+    </div>
+    <button type="button" class="cv-feedback-dialog__close" aria-label="关闭照片 · Close photo" autofocus>×</button>
+  </header>
+  <div class="cv-feedback-dialog__stage" tabindex="0" role="region" aria-label="照片阅读区，可滚动查看原图 · Scrollable photo viewer">
+    <img class="cv-feedback-dialog__image" alt="" />
   </div>
-</div>
+  <footer class="cv-feedback-dialog__footer">
+    <div class="cv-feedback-dialog__controls">
+      <button type="button" data-feedback-prev aria-label="上一张照片 · Previous photo">← 上一张</button>
+      <button type="button" class="cv-feedback-dialog__zoom" aria-pressed="false">阅读原图 · Zoom</button>
+      <button type="button" data-feedback-next aria-label="下一张照片 · Next photo">下一张 →</button>
+    </div>
+    <p class="cv-feedback-dialog__hint">← → 切换照片 · Arrow keys to browse · Esc 关闭</p>
+  </footer>
+</dialog>
 
-<!-- Image Modal -->
-<div id="imageModal" class="modal" onclick="closeModal()">
-  <span class="modal-close" onclick="closeModal()">&times;</span>
-  <img class="modal-content" id="modalImage">
-</div>
-
-<script>
-  function openModal(src) {
-    document.getElementById('imageModal').style.display = 'flex';
-    document.getElementById('modalImage').src = src;
-    document.body.style.overflow = 'hidden';
-  }
-  
-  function closeModal() {
-    document.getElementById('imageModal').style.display = 'none';
-    document.body.style.overflow = 'auto';
-  }
-  
-  // Close modal with ESC key
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      closeModal();
-    }
-  });
-</script>
+<script src="assets/cv-feedback.js" defer></script>
 
 </body>
 </html>
